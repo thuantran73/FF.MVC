@@ -1,78 +1,77 @@
 ﻿@model IEnumerable<DIENMAYQUYETTIEN.Models.CashBill>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cash Bill Management";
     Layout = "~/Areas/Admin/Views/Shared/_ADMINLAYOUT.cshtml";
 }
 
+<div class="container">
+    <h2>
+        Cash Bill Management
+    </h2>
+    <p>
+        @Html.ActionLink("Add Cash Bill", "Create")
+    </p>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Cash Bill Management
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Bill Code</th>
+                            <th>Customer name</th>
+                            <th>Phone number</th>
+                            <th>Address</th>
+                            <th>Date</th>
+                            <th>Shipper</th>
+                            <th>Note</th>
+                            <th>Grand Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BillCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CustomerName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Address)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Shipper)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Note)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GrandTotal)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Bill Code</th>
-            <th>Customer name</th>
-            <th>Phone number</th>
-            <th>Address</th>
-            <th>Date</th>
-            <th>Shipper</th>
-            <th>Note</th>
-            <th>Grand Total</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Bill Code</th>
-            <th>Customer name</th>
-            <th>Phone number</th>
-            <th>Address</th>
-            <th>Date</th>
-            <th>Shipper</th>
-            <th>Note</th>
-            <th>Grand Total</th>
-            <th>Action</th>
-        </tr>
-    </tfoot>
-
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BillCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Shipper)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Note)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GrandTotal)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                </td>
-            </tr>
-        }
-    </tbody>
-
-</table>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
