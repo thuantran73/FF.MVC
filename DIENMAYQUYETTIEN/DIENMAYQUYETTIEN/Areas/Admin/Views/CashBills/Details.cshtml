@@ -1,4 +1,4 @@
-﻿@model DIENMAYQUYETTIEN.Models.InstallmentBill
+﻿@model DIENMAYQUYETTIEN.Models.CashBill
 
 @{
     ViewBag.Title = "Details";
@@ -8,32 +8,39 @@
     <h2>Details</h2>
 
     <div>
-        <h4>Installment Bill</h4>
+        <h4>Cash Bill</h4>
         <hr />
         <div class="table-responsive">
             <table table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Bill Code</th>
+                        <th>Customer name</th>
+                        <th>Phone number</th>
+                        <th>Address</th>
                         <th>Date</th>
                         <th>Shipper</th>
                         <th>Note</th>
-                        <th>Method</th>
-                        <th>Period</th>
-                        <th>Grandtotal</th>
-                        <th>Taken</th>
-                        <th>Remain</th>
+                        <th>Grand Total</th>
                         <th>Product Name</th>
                         <th>Product Quantity</th>
-
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var details in Model.InstallmentBillDetails)
+                    @foreach (var details in Model.CashBillDetails)
                     {
                         <tr>
                             <td>
                                 @Html.DisplayFor(model => model.BillCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.PhoneNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Address)
                             </td>
                             <td>
                                 @Html.DisplayFor(model => model.Date)
@@ -45,19 +52,7 @@
                                 @Html.DisplayFor(model => model.Note)
                             </td>
                             <td>
-                                @Html.DisplayFor(model => model.Method)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Period)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(model => model.GrandTotal)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Taken)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Remain)
                             </td>
                             <td>
                                 @details.Product.ProductName
