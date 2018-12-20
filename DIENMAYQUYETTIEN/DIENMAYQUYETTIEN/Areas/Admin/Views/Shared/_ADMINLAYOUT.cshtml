@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Installment Cash Bill Management">
-                    <a class="nav-link" href="/Admin/InstallmentCashBill/">
+                    <a class="nav-link" href="/Admin/InstallmentBills/">
                         <i class="fa fa fa-credit-card-alt"></i>
                         <span class="nav-link-text">Installment Cash Bill Management</span>
                     </a>
@@ -56,23 +56,22 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                         <i class="fa fa-fw fa-sign-out">
-                            @if(Session["UserName"] != null)
+                            @if (Session["UserName"] != null)
                             {
                                 <i>
                                     Hi @Session["UserName"].ToString()
                                 </i>
                             }
-   
+
                         </i>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    <!--wdsad-->
     <div class="content-wrapper">
         @RenderBody()
-        
+
         <!-- /.container-fluid-->
         <!-- /.content-wrapper-->
         <footer class="sticky-footer">
