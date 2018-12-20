@@ -221,6 +221,7 @@
     <Content Include="Content\bootstrap1.css" />
     <Content Include="Content\dataTables.bootstrap4.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\sb-admin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -262,11 +263,11 @@
     <Content Include="Areas\Admin\Views\ProductAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductAdmin\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\CashBill\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CashBill\Create.cshtml" />
     <Content Include="Areas\Admin\Views\CashBill\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CashBill\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
