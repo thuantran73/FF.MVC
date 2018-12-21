@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +16,8 @@
     <link href="~/Content/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/Content/sb-admin.css" rel="stylesheet" />
     <link href="~/Content/bootstrap1.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -103,14 +106,20 @@
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JavaScript-->
-        <script src="~/Scripts/jquery.min.js"></script>
-        <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-        <script src="~/Scripts/jquery.easing.min.js"></script>
-        <script src="~/Scripts/jquery.dataTables.js"></script>
-        <script src="~/Scripts/dataTables.bootstrap4.js"></script>
-        <script src="~/Scripts/sb-admin.min.js"></script>
-        <script src="~/Scripts/sb-admin-datatables.min.js"></script>
+        <div>
+            <div>
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
+                <!-- Bootstrap core JavaScript-->
+                <script src="~/Scripts/jquery.min.js"></script>
+                <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+                <script src="~/Scripts/jquery.easing.min.js"></script>
+                <script src="~/Scripts/jquery.dataTables.js"></script>
+                <script src="~/Scripts/dataTables.bootstrap4.js"></script>
+                <script src="~/Scripts/sb-admin.min.js"></script>
+                <script src="~/Scripts/sb-admin-datatables.min.js"></script>
+            </div>
     </div>
 </body>
 
