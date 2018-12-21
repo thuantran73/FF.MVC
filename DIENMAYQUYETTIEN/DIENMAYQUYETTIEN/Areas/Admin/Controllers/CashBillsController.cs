@@ -34,7 +34,7 @@ namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
             }
             return View(cashBill);
         }
-
+        
         // GET: Admin/CashBills/Create
         public ActionResult Create()
         {

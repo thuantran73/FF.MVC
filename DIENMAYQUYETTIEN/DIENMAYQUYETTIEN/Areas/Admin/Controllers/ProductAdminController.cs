@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using DIENMAYQUYETTIEN.Models;
 using System.Net;
+using System.Activities.Statements;
+using System.Transactions;
+using TransactionScope = System.Transactions.TransactionScope;
 
 namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
 {
@@ -27,17 +30,34 @@ namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(Product p)
         {
-            var pro = new Product();
-            pro.ProductCode = p.ProductCode;
-            pro.ProductName = p.ProductName;
-            pro.SalePrice = p.SalePrice;
-            pro.OriginPrice = p.OriginPrice;
-            pro.InstallmentPrice = p.InstallmentPrice;
-            pro.Quantity = p.Quantity;
-            pro.Status = p.Status;
-            pro.ProductTypeID = p.ProductTypeID;
-            db.Products.Add(pro);
-            db.SaveChanges();
+            using (var scope = new TransactionScope())
+            {
+                var pro = new Product();
+                pro.ProductCode = p.ProductCode;
+                pro.ProductName = p.ProductName;
+                pro.SalePrice = p.SalePrice;
+                pro.OriginPrice = p.OriginPrice;
+                pro.InstallmentPrice = p.InstallmentPrice;
+                pro.Quantity = p.Quantity;
+                pro.Status = p.Status;
+                pro.ProductTypeID = p.ProductTypeID;
+                db.Products.Add(pro);
+                db.SaveChanges();
+
+                var path = Server.MapPath("~/App_Data");
+                path = path + "/" + p.ID;
+                if (Request.Files["HinhAnh"] != null &&
+                    Request.Files["HinhAnh"].ContentLength > 0)
+                {
+                    Request.Files["HinhAnh"].SaveAs(path);
+
+                    scope.Complete(); // approve for transaction
+                    return RedirectToAction("Index");
+                }
+                else
+                    ModelState.AddModelError("HinhAnh", "Chưa có hình sản phẩm!");
+            }
+            
 
             return RedirectToAction("Index");
         }
