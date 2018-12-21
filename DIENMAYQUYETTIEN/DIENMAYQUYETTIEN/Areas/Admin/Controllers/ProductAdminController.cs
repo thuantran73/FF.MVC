@@ -63,7 +63,7 @@ namespace WebApplication.Controllers
                 }
             }
 
-            ViewBag.Prod_ID = new SelectList(db.ProductTypes, "id", "TenLoai", model.ProductTypeID);
+            ViewBag.Prod_ID = new SelectList(db.ProductTypes, "id", "ProductTypeName", model.ProductTypeID);
             return View(model);
         }
 
@@ -118,7 +118,7 @@ namespace WebApplication.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            ViewBag.Loai_id = new SelectList(db.ProductTypes, "id", "TenLoai", model.ProductTypeID);
+            ViewBag.Loai_id = new SelectList(db.ProductTypes, "id", "ProductTypeName", model.ProductTypeID);
             return View(model);
         }
 
