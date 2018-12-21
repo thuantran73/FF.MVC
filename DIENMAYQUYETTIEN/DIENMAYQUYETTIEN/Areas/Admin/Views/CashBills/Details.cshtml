@@ -24,43 +24,48 @@
                         <th>Grand Total</th>
                         <th>Product Name</th>
                         <th>Product Quantity</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var details in Model.CashBillDetails)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(model => model.BillCode)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.CustomerName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.PhoneNumber)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Address)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Date)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Shipper)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.Note)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(model => model.GrandTotal)
-                            </td>
-                            <td>
-                                @details.Product.ProductName
-                            </td>
-                            <td>
-                                @details.Quantity
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.BillCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.CustomerName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Shipper)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Note)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.GrandTotal)
+                        </td>
+                        <td>
+                            @details.Product.ProductName
+                        </td>
+                        <td>
+                            @details.Quantity
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditCashBillDetail", new { id = details.ID }) |                           
+                            @Html.ActionLink("Delete", "Delete", new { id = details.ID })
+                        </td>
+                    </tr>
                     }
                 </tbody>
 
