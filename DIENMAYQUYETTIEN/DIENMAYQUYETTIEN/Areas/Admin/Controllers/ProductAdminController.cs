@@ -30,8 +30,7 @@ namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(Product p)
         {
-            using (var scope = new TransactionScope())
-            {
+            
                 var pro = new Product();
                 pro.ProductCode = p.ProductCode;
                 pro.ProductName = p.ProductName;
@@ -43,21 +42,6 @@ namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
                 pro.ProductTypeID = p.ProductTypeID;
                 db.Products.Add(pro);
                 db.SaveChanges();
-
-                var path = Server.MapPath("~/App_Data");
-                path = path + "/" + p.ID;
-                if (Request.Files["HinhAnh"] != null &&
-                    Request.Files["HinhAnh"].ContentLength > 0)
-                {
-                    Request.Files["HinhAnh"].SaveAs(path);
-
-                    scope.Complete(); // approve for transaction
-                    return RedirectToAction("Index");
-                }
-                else
-                    ModelState.AddModelError("HinhAnh", "Chưa có hình sản phẩm!");
-            }
-            
 
             return RedirectToAction("Index");
         }

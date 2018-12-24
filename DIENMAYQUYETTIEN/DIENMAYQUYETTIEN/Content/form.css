@@ -1,0 +1,15 @@
+﻿body {
+}
+.container{
+    position:relative; 
+    background-color:antiquewhite
+}
+.container .form-group{
+    position:relative;
+    left:25%;
+}
+.col-md-10{
+    display:inline-block;
+    width:100px;
+}
+

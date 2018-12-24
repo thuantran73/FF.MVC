@@ -10,13 +10,13 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="container">
+    <div class="container" style="background-color:antiquewhite; position:relative">
         <div class="form-horizontal">
-            <h3 style="padding-left:400px">Create product</h3>
+            <h3 style="position:relative; left:30%">Create product</h3>
             <hr />
             @Html.ValidationSummary(true)
 
-            <div class="form-group">
+            <div class="form-group" style="position:relative; left:25%">
                 @Html.LabelFor(model => model.ProductCode, "Product Code", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.ProductCode)
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.ProductName, "Product Name", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.ProductName)
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.ProductTypeID, "Product Type", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.DropDownList("ProductTypeID", new SelectList(ViewBag.Prod, "ID", "ProductTypeName"))
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.SalePrice, "Sale Price", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.SalePrice)
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.OriginPrice, "Origin Price", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.OriginPrice)
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.InstallmentPrice, "Installment Price", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.InstallmentPrice)
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.Quantity, "Quantity", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.Quantity)
@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:10%">
                 @Html.Label("Picture", "Product Picture", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.TextBox("Picture", null, new { type = "file", accept = "image/gif, image/jpeg, image/png", onchange = "readURL(this);", @class = "form-control" })
@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"style="position:relative; left:25%">
                 @Html.LabelFor(model => model.Status, "Status", new { @class = "control-label col-md-2" })
                 <div class="col-md-10" style="display:inline-block; width:100px">
                     @Html.EditorFor(model => model.Status)
@@ -89,8 +89,8 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+            <div class="form-group" style="width:100px">
+                <div class="col-md-offset-2 col-md-10" style="width:100px">
                     <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>

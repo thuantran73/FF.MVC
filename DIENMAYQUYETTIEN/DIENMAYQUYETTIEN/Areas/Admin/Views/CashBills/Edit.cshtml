@@ -11,6 +11,7 @@
 {
     @Html.AntiForgeryToken()
     
+<div class="container">
     <div class="form-horizontal">
         <h4>CashBill</h4>
         <hr />
@@ -87,8 +88,9 @@
             </div>
         </div>
     </div>
+</div>
 }
-
+<link href="~/Content/form.css" rel="stylesheet" />
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
