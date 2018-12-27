@@ -171,6 +171,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductAdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +220,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap1.css" />
@@ -226,7 +230,13 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\form.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\main_styles.css" />
     <Content Include="Content\menu-dienlanh.jpg" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.theme.default.css" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\resume.css" />
+    <Content Include="Content\resume.min.css" />
     <Content Include="Content\sb-admin.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -234,6 +244,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\iphonex.jpg" />
+    <Content Include="Image\logo.png" />
     <Content Include="Image\maygiattoshiba.png" />
     <Content Include="Image\maylanhlg.jpg" />
     <Content Include="Image\maylanhtoshiba.jpg" />
@@ -289,6 +300,8 @@
     <Content Include="Areas\Admin\Views\ProductAdmin\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\easing.js" />
+    <Content Include="Scripts\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -300,8 +313,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\resume.js" />
+    <Content Include="Scripts\resume.min.js" />
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -331,6 +348,11 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_ADMINLAYOUT.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
