@@ -54,10 +54,10 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
                 </li>
-                @foreach (var code in Model)
+                @foreach (var code in Model.Select(p => p.ProductType).Distinct())
                 {
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#@Html.DisplayFor(codeItem => code.ProductType.ProductTypeCode)">@Html.DisplayFor(codeItem => code.ProductType.ProductTypeName)</a>
+                        <a class="nav-link js-scroll-trigger" href="#@Html.DisplayFor(codeItem => code.ProductTypeCode)">@Html.DisplayFor(codeItem => code.ProductTypeName)</a>
                     </li>
                 }
                 <li class="nav-item">
@@ -111,7 +111,7 @@
                                 <div class="product-item">
                                     <div class="product discount product_filter">
                                         <div class="product_image">
-                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                            <img src="@Url.Action("Details", "ProductAdmin", new  { id = item.ID, area = "Admin" })" width="150" height="200"/>
                                         </div>
                                         <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
                                             <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>

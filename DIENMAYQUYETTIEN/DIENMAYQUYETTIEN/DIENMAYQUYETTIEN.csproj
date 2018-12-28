@@ -243,6 +243,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Areas\Admin\Image\iphonex.jpg" />
+    <Content Include="Areas\Admin\Image\logo.png" />
+    <Content Include="Areas\Admin\Image\maygiattoshiba.png" />
+    <Content Include="Areas\Admin\Image\maylanhlg.jpg" />
+    <Content Include="Areas\Admin\Image\maylanhtoshiba.jpg" />
+    <Content Include="Areas\Admin\Image\tivilg.jpg" />
     <Content Include="Image\iphonex.jpg" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\maygiattoshiba.png" />
