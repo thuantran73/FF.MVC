@@ -98,37 +98,149 @@
             </div>
         </section>
 
-        @foreach (var page in Model)
+        @foreach (var page in Model.GroupBy(p => p.ProductType.ProductTypeCode))
         {
             <hr class="m-0">
-            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.ProductType.ProductTypeCode)">
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.Key)">
                 <div class="row ">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Where(x => x.ProductType.ProductTypeCode == page.Key))
                     {
+                        <div class="col">
+                            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-                        
-                            <div class="col">
-                                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
-                                    <div class="product-item">
-                                        <div class="product discount product_filter">
-                                            <div class="product_image">
-                                                <img width="100" height="200" src="~/Image/iphonex.jpg">
-                                            </div>
-                                            <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
-                                                <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
-                                                <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
-                                            </div>
+                                <div class="product-item">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                        </div>
+                                        <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
+                                            <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
+                                            <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        
-
+                        </div>
                     }
+
                 </div>
+
             </section>
+
+            @*<hr class="m-0">
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.ProductType.ProductTypeCode)">
+                <div class="row ">
+                    <span>jkabdkabk2</span>
+                    @foreach (var item in Model.Where(x => x.ProductType.ProductTypeCode == "MLH"))
+                    {
+                        <div class="col">
+                            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+                                <div class="product-item">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                        </div>
+                                        <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
+                                            <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
+                                            <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </section>
+
+            <hr class="m-0">
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.ProductType.ProductTypeCode)">
+                <div class="row ">
+                    <span>aksdkas3</span>
+                    @foreach (var item in Model.Where(x => x.ProductType.ProductTypeCode == "TVI"))
+                    {
+                        <div class="col">
+                            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+                                <div class="product-item">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                        </div>
+                                        <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
+                                            <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
+                                            <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </section>
+
+            <hr class="m-0">
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.ProductType.ProductTypeCode)">
+                <div class="row ">
+                    <span>akjdkasnd4</span>
+                    @foreach (var item in Model.Where(x => x.ProductType.ProductTypeCode == "MGI"))
+                    {
+                        <div class="col">
+                            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+                                <div class="product-item">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                        </div>
+                                        <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
+                                            <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
+                                            <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </section>
+
+            <hr class="m-0">
+            <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="@Html.DisplayFor(pageItem => page.ProductType.ProductTypeCode)">
+                <div class="row ">
+                    <span>akjsdkansdk5</span>
+                    @foreach (var item in Model.Where(x => x.ProductType.ProductTypeCode == "MAH"))
+                    {
+                        <div class="col">
+                            <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+                                <div class="product-item">
+                                    <div class="product discount product_filter">
+                                        <div class="product_image">
+                                            <img width="100" height="200" src="~/Image/iphonex.jpg">
+                                        </div>
+                                        <div class="product_info" @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)>
+                                            <h6 class="product_name">@Html.ActionLink(item.ProductName, "Details", new { id = item.ID })</h6>
+                                            <div class="product_price">@Html.DisplayFor(modelItem => item.SalePrice)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+            </section>*@
+
         }
+
 
 
     </div>
