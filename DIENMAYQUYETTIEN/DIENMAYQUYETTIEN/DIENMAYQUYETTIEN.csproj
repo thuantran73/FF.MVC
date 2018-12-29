@@ -238,6 +238,7 @@
     <Content Include="Content\resume.css" />
     <Content Include="Content\resume.min.css" />
     <Content Include="Content\sb-admin.css" />
+    <Content Include="Content\w3.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -249,12 +250,15 @@
     <Content Include="Areas\Admin\Image\maylanhlg.jpg" />
     <Content Include="Areas\Admin\Image\maylanhtoshiba.jpg" />
     <Content Include="Areas\Admin\Image\tivilg.jpg" />
+    <Content Include="Image\49128330_305409286750978_2829037323709054976_n.png" />
+    <Content Include="Image\49211143_327728621167663_6039723482835582976_n.png" />
     <Content Include="Image\iphonex.jpg" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\maygiattoshiba.png" />
     <Content Include="Image\maylanhlg.jpg" />
     <Content Include="Image\maylanhtoshiba.jpg" />
     <Content Include="Image\tivilg.jpg" />
+    <Content Include="Image\Điện Máy Việt 24h.jpg" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

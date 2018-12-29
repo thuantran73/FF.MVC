@@ -5,7 +5,6 @@
     Layout = "~/Areas/Admin/Views/Shared/_ADMINLAYOUT.cshtml";
 }
 
-<h2>Create</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -16,13 +15,13 @@
         <h4>CashBill</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.BillCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BillCode)
                 @Html.ValidationMessageFor(model => model.BillCode)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -82,13 +81,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success">
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Back to list" class="btn btn-danger">
             </div>
         </div>
     </div>
 </div>
 }
     <link href="~/Content/form.css" rel="stylesheet" />
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
