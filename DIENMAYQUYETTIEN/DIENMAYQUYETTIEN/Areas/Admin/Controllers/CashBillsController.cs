@@ -48,6 +48,8 @@ namespace DIENMAYQUYETTIEN.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,BillCode,CustomerName,PhoneNumber,Address,Date,Shipper,Note,GrandTotal")] CashBill cashBill)
         {
+            ViewBag.Cus_name = new SelectList(db.Customers, "ID", "CustomerName");
+
             if (ModelState.IsValid)
             {
                 db.CashBills.Add(cashBill);
