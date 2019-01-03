@@ -28,16 +28,11 @@ namespace DIENMAYQUYETTIEN.Models
         public int ProductTypeID { get; set; }
         public int SalePrice { get; set; }
         [Required (ErrorMessage = "Vui lòng nhập giá bán sản phẩm")]
-        [Range (50, 100000000, ErrorMessage = "Giá sản phẩm không được nhỏ hơn 50 và lớn hơn 100 000 000")]
         public int OriginPrice { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập giá gốc sản phẩm")]
-        [Range(50, 100000000, ErrorMessage = "Giá sản phẩm không được nhỏ hơn 50 và lớn hơn 100 000 000")]
         public int InstallmentPrice { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập giá trả góp sản phẩm")]
-        [Range(50, 100000000, ErrorMessage = "Giá sản phẩm không được nhỏ hơn 50 và lớn hơn 100 000 000")]
         public int Quantity { get; set; }
-        [Required(ErrorMessage = "Vui lòng nhập giá sản phẩm")]
-        [Range(50, 100000000, ErrorMessage = "Giá sản phẩm không được nhỏ hơn 50 và lớn hơn 100 000 000")]
         public string Avatar { get; set; }
         public Nullable<bool> Status { get; set; }
     
